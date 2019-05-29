@@ -1,0 +1,38 @@
+Tkinter
+
+- Devemos importar a bibilioteca tkinter que já vem com o python
+
+- Para a criação de uma janela devemos criar uma instancia da classe ".Tk()"
+Ex: 
+import tkinter
+
+janela = tkinter.Tk()
+
+- O método ".mainloop()" cria uma repetição infinita que será mantida até que a janela seja fechada
+
+- O método ".title()" dá o nome do título da janela
+
+- Podemos mudara a cor de fundo da janela mudando a chave "bg" de janela (que pode ser visto como um di-
+cionário) 
+Ex:
+
+janela["bg"] = "blue"
+
+- O método ".geometry()" define em pixels o tamanho da jalena por meio da largura e altura e também o 
+posicionamento de abertura da janela começando pelo posicionamento da esqueda da tela e depois pelo 
+pocisionamento a partir do topo da tela
+Ex:
+LxA+E+T
+
+janela.geometry("300x300+100+100")
+
+- Os tres pilares do estudo de interface gráfica são:
+1) Gerenciamento de leiaute
+2) Widget (componentes da tela)
+3) Eventos
+
+
+
+
+
+ 
