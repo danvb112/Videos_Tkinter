@@ -18,6 +18,8 @@ Ex:
 
 janela["bg"] = "blue"
 
+obs: "bg" = background
+
 - O método ".geometry()" define em pixels o tamanho da jalena por meio da largura e altura e também o 
 posicionamento de abertura da janela começando pelo posicionamento da esqueda da tela e depois pelo 
 pocisionamento a partir do topo da tela
@@ -30,6 +32,37 @@ janela.geometry("300x300+100+100")
 1) Gerenciamento de leiaute
 2) Widget (componentes da tela)
 3) Eventos
+
+Gerenciador de leiaute
+
+- Um gerenciador de leiaute define a organização dos widgets dentro de um container
+
+- A bibilioteca Tkinter proporciona 3 gerenciadores de leiaute sendo eles:
+
+  Place (menos usado) - os widgets são dispostos conforme suas cordenadas x e y
+  Pack - empacota os widgets na horizontal ou vertical
+  Grid - os widgets são inseridos num sistema de células de uma tabela
+
+- O gerenciador "place" vai posicionar um "Label" de acordo com pontos cartesianos x e y sendo eles o 
+posicionamento equivalente ao quarto quadrante, ou seja, o ponto (0,0) seria o canto superior esquerdo
+do monitor
+
+- Toda vez que um widget for criado esse mesmo deve ser colocado dentro de um container
+
+EX:. Utilização do place
+
+from tkinter import *
+
+janela = Tk()
+
+lb = Label(janela, text="Fala Galera!!")
+lb.place(x=100, y=100)
+
+janela.geometry("300x300+200+200")
+
+janela.mainloop()
+
+
 
 
 
