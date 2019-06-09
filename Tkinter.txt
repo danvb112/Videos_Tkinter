@@ -47,6 +47,8 @@ Gerenciador de leiaute
 posicionamento equivalente ao quarto quadrante, ou seja, o ponto (0,0) seria o canto superior esquerdo
 do monitor
 
+- Label é utilizado para escrever uma mensagem na tela, deve ser colocado dentro de um container.
+
 - Toda vez que um widget for criado esse mesmo deve ser colocado dentro de um container
 
 EX:. Utilização do place
@@ -61,6 +63,90 @@ lb.place(x=100, y=100)
 janela.geometry("300x300+200+200")
 
 janela.mainloop()
+
+- Para criar um botão devemos criar uma variável que irá conter uma instância de "Button". A instância
+de "Button" deve receber como parâmetros o container na qual ele vai estar, a largura do botão "width",
+o texto do botão "text" e a função que irá chamar quando o botão for pressionado por meio do parâmetro
+"command".
+
+Exemplo de criação de botão:
+
+from tkinter import *
+
+def bt_click():
+    print("bt_click")
+
+    lb["text"] = "Funcionou!!"
+
+janela = Tk()
+
+bt = Button(janela, width=20, text="OK", command=bt_click )
+bt.place(x=100, y=100)
+
+lb= Label(janela, text="Teste")
+lb.place(x=100, y=150)
+
+janela.geometry("300x300+200+200")
+janela.mainloop()
+
+
+- Podemos criar uma função genérica para servir a mais de um botão ao mesmo tempo, como não podemos 
+passar o botão como parâmetro da função em "command" teremos que utilizar uma função que reescreva a 
+função genérica passando a ela o parâmetro que desejamos. Essa função é a "partial" do método "functools"
+
+Ex: Função genérica
+
+from tkinter import *
+from functools import partial
+
+def bt_click(botao):
+    print(botao["text"])
+
+janela = Tk()
+
+bt1 = Button(janela, width=20, text="Butão1")
+bt1["command"] = partial(bt_click, bt1)
+bt1.place(x=100, y=100)
+
+bt2 = Button(janela, width=20, text="Butão2")
+bt2["command"] = partial(bt_click, bt2)
+bt2.place(x=100, y=130)
+
+janela.geometry("300x300+200+200")
+janela.mainloop()
+
+- A instância "Entry" cria uma caixa de entrada, uma forma tradicional de se obter dados do usuário.
+
+- A função "get" vai retornar o valor digitado no campo
+
+Ex: Utilização do Entry
+
+
+from tkinter import *
+
+def bt_onclick():
+    print(ed.get())
+    lb["text"] = ed.get()
+
+janela = Tk()
+janela["bg"] = "Blue"
+
+ed = Entry(janela)
+ed.place(x=100, y=100)
+
+bt = Button(janela, width=20, text="OK", command= bt_onclick )
+bt.place(x=100, y=130)
+
+lb = Label(janela, text="Label")
+lb.place(x=100,y=160)
+
+janela.geometry("300x300+300+300")
+janela.mainloop()
+
+
+
+
+
 
 
 
