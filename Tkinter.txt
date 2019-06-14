@@ -176,6 +176,16 @@ chor" ao mesmo tempo, a propriedade "side" sempre tem prescendência a "anchor".
 
 - A propriedade "expand" vai definir que todos os widgets tenham o mesmo tamanho num determinado sentido
 
+- Gerenciador de leiaute Grid nos permite manipular a interface gráfica utilizando um sistema de linhas 
+e colunas
+
+- As prorpiedades "row" e "column" definem a linha e a coluna dos componentes dentro de células.
+
+- A prorpiedade "sticky" nos permite definir o sentido que um componente vai ter dentro de uma celula
+
+- As propriedades "rowspan" e "columnspan" definem a quantidade de linhas e colunas que devem ser
+mescladas
+
 
 
 
